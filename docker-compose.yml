@@ -1,0 +1,41 @@
+# gb-parano1d-solo: your own ParanO(1)d node and a Stratum pool for your rigs.
+#
+#   cp .env.example .env      # set WALLET_ADDRESS
+#   docker compose up -d
+#   docker compose logs -f
+#   docker exec gb-parano1d-solo gbsolo status
+#
+# Point every rig at stratum+tcp://<this-host>:3333 (any worker name).
+
+name: gb-parano1d-solo
+
+services:
+  gb-parano1d-solo:
+    image: gustlborg/gb-parano1d-solo:${GBSOLO_VERSION:-latest}
+    container_name: gb-parano1d-solo
+    restart: unless-stopped
+    init: true
+    # The pool waits for a pending block submission and lets the node close
+    # its database before it exits.
+    stop_grace_period: 90s
+    env_file: .env
+    environment:
+      P2P_LISTEN: 0.0.0.0:${P2P_PORT:-9600}
+      STRATUM_LISTEN: 0.0.0.0:3333
+      STATS_BIND: 0.0.0.0
+    ports:
+      # Node P2P: forward this TCP port in your router as well, so other
+      # nodes can connect and new blocks reach you sooner.
+      - "${P2P_PORT:-9600}:${P2P_PORT:-9600}"
+      # Stratum for your rigs.
+      - "${STRATUM_PORT:-3333}:3333"
+      # Dashboard (http://<host>:9640) and JSON statistics. This machine
+      # only by default; STATS_BIND_HOST=0.0.0.0 opens it to your LAN.
+      - "${STATS_BIND_HOST:-127.0.0.1}:${STATS_PORT_HOST:-9640}:9640"
+    volumes:
+      - gbsolo-data:/data
+    # Optional: limit the CPU cores the node may use for its proofs.
+    # cpus: "8"
+
+volumes:
+  gbsolo-data:
