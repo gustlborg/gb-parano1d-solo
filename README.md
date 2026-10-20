@@ -87,11 +87,36 @@ is just a label; payouts always go to `WALLET_ADDRESS`.
   ./gb-parano1d-miner cuda-mine --rpc stratum+tcp://192.168.1.10:3333 --coinbase o1… --worker rig1 --search-binary ./gb-parano1d-engine
   ```
 
-- **HiveOS:** flight sheet with pool URL `stratum+tcp://192.168.1.10:3333`
-  and your `o1…` address as the wallet.
+- **HiveOS:** see "HiveOS rigs" below.
 - **Other miners:** any Stratum V1 miner that speaks the parano1d dialect.
 
 Replace `192.168.1.10` with the LAN address of the pool PC.
+
+## HiveOS rigs
+
+The container itself runs on a PC with a fast CPU (Linux or Windows, see
+above); your HiveOS rigs mine against it over the LAN. On each rig, or once in
+a Flight Sheet used by all rigs:
+
+1. **Wallets:** add a wallet with coin `NOID` (any name) and your `o1…`
+   address.
+2. **Flight Sheet:** coin `NOID`, that wallet, pool *Configure in miner*,
+   miner *Custom* → *Setup Miner Config*:
+   - Miner name: `parano1d`
+   - Installation URL: the HiveOS package of gb-parano1d-miner from its
+     release page, e.g.
+     `https://github.com/gustlborg/gb-parano1d-miner/releases/download/v2.18.5/parano1d-2.18.5.tar.gz`
+     (keep the file name as it is)
+   - Wallet and worker template: `%WAL%`
+   - Pool URL: `stratum+tcp://192.168.1.10:3333` (the LAN address of the
+     pool PC)
+3. Apply the Flight Sheet. The rig's HiveOS worker name becomes the worker
+   name in the dashboard.
+
+Optional, in *Custom user config*: `BACKUP_URL=stratum+tls://<public pool>`
+makes the rig fall back to a public pool while your own pool is unreachable.
+Clocks, power limit and efficiency modes are described in the miner's own
+README.
 
 ## Check what is happening
 
