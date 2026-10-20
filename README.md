@@ -133,6 +133,18 @@ Your data (node database, pool state, found blocks) stays in the
 `gbsolo-data` volume. `docker compose down` stops the container and keeps the
 data; `docker compose down -v` also deletes the data.
 
+## Without Docker Hub
+
+Every release page also carries the image as a file
+(`gb-parano1d-solo-<version>-image.tar.gz` with a `.sha256` checksum). To use
+it instead of pulling from Docker Hub:
+
+```sh
+docker load -i gb-parano1d-solo-0.1.2-image.tar.gz
+```
+
+Then set `GBSOLO_VERSION=0.1.2` in `.env` and run `docker compose up -d`.
+
 ## Settings (.env)
 
 | Variable | Default | Meaning |
