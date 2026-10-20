@@ -143,8 +143,9 @@ docker exec gb-parano1d-solo gbsolo blocks    # blocks found
 ## Solo mining means variance
 
 A block is found when one of your rigs hits the network target. With a small
-farm that can take days or weeks; the dashboard and `gbsolo status` show the
-expected time per block for your hashrate. Nothing is lost while you wait —
+farm that can take days or weeks; the Effort tile in the dashboard
+("one block every …") and `gbsolo status` show how often a block is expected
+at your current hashrate. Nothing is lost while you wait —
 every block you find pays the full reward to your address.
 
 ## Update
