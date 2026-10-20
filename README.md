@@ -21,10 +21,10 @@ straight to your own address.
 
 ## Requirements
 
-- Linux with Docker (Compose v2).
+- Docker with Compose v2: Linux, or Windows with Docker Desktop.
 - A fast CPU: the node proves every block template. More cores and AVX-512
   shorten the proof; 8 or more modern cores are recommended.
-- 8 GB RAM (the node uses about 2 GB), a few GB of SSD space.
+- A few GB of free SSD space.
 - Recommended: TCP port 9600 forwarded to this machine in your router, and
   `PUBLIC_ADDRESS` set to your public IP.
 
@@ -38,6 +38,10 @@ nano .env                 # set WALLET_ADDRESS=o1…
 docker compose up -d
 docker compose logs -f
 ```
+
+Windows (Docker Desktop): save `docker-compose.yml` and `.env.example` from
+this repository into a folder, rename `.env.example` to `.env`, set
+`WALLET_ADDRESS`, then run `docker compose up -d` in that folder.
 
 The node synchronizes within a minute or two. Once the log says
 `node is synchronized and ready for mining`, start your rigs.
@@ -100,16 +104,6 @@ volume.
 | `STATS_PORT_HOST` | `9640` | Host port of the dashboard |
 | `GBSOLO_VERSION` | `latest` | Image version to run (e.g. `0.1.2`) |
 | `TLS_ENABLED`, `TLS_CERT`, `TLS_KEY` | off | Stratum over TLS (needs a real certificate) |
-
-## Developer fee
-
-The pool takes a developer fee of 4 % of your mining work. It is charged per
-round, not per block: on average one round in twenty-five is mined with the
-developer's address, all other rounds pay 100 % of the block to your wallet.
-Rounds are chosen by the work your rigs have done, so pausing or restarting
-never changes the share, and the long-run fee is exactly 4 %. gb-parano1d-miner
-pays nothing on top: its own fee connection mines the same template as your
-rigs, so with it the total is 4 %.
 
 ## License
 
