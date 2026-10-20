@@ -54,8 +54,8 @@ a minute or two), connect your rigs.
 2. Open PowerShell and run:
 
 ```powershell
-mkdir D:\gb-parano1d-solo
-cd D:\gb-parano1d-solo
+mkdir C:\gb-parano1d-solo
+cd C:\gb-parano1d-solo
 curl.exe -fsSLO https://raw.githubusercontent.com/gustlborg/gb-parano1d-solo/main/docker-compose.yml
 curl.exe -fsSL https://raw.githubusercontent.com/gustlborg/gb-parano1d-solo/main/.env.example -o .env
 notepad .env
@@ -73,7 +73,7 @@ docker compose logs -f
    otherwise rigs on other machines cannot reach port 3333.
 
 When the log says `node is synchronized and ready for mining`, connect your
-rigs. Any folder works instead of `D:\gb-parano1d-solo`.
+rigs. Any folder works instead of `C:\gb-parano1d-solo`.
 
 ## Connect your rigs
 
