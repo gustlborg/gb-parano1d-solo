@@ -1,7 +1,7 @@
 # GB Parano1d Solo (`gb-parano1d-solo`)
 
-Solo mining for ParanO(1)d (NOID) on your own node. One Docker container runs
-a ParanO(1)d node and a Stratum pool for all your rigs; every block you find
+Solo mining for Parano1d (NOID) on your own node. One Docker container runs
+a Parano1d node and a Stratum pool for all your rigs; every block you find
 is paid straight to your own address.
 
 - **Your own node, your own blocks.** No pool account, no payout threshold,
@@ -23,7 +23,7 @@ is paid straight to your own address.
 - A fast CPU: the node proves every block template. 8 or more modern cores
   are recommended; AVX-512 helps.
 - A few GB of free SSD space.
-- Your ParanO(1)d address (`o1…`).
+- Your Parano1d address (`o1…`).
 - Recommended: forward TCP port 9600 to this PC in your router, so other
   nodes can connect to yours and new blocks reach you sooner.
 
@@ -152,5 +152,5 @@ data; `docker compose down -v` also deletes the data.
 ## License
 
 The pool program is proprietary (© gustlborg). The image contains a modified
-build of the ParanO(1)d node, licensed under the Apache License 2.0; see
+build of the Parano1d node, licensed under the Apache License 2.0; see
 `/usr/share/doc/gb-parano1d-solo/` in the image.

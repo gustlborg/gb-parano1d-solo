@@ -1,4 +1,4 @@
-# gb-parano1d-solo: your own ParanO(1)d node and a Stratum pool for your rigs.
+# gb-parano1d-solo: your own Parano1d node and a Stratum pool for your rigs.
 #
 #   cp .env.example .env      # set WALLET_ADDRESS
 #   docker compose up -d
