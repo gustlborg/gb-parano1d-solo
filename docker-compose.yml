@@ -19,13 +19,6 @@ services:
     # its database before it exits.
     stop_grace_period: 90s
     env_file: .env
-    # Keep the container log small (the node keeps its own rotated log in
-    # the data volume).
-    logging:
-      driver: json-file
-      options:
-        max-size: "10m"
-        max-file: "3"
     environment:
       P2P_LISTEN: 0.0.0.0:${P2P_PORT:-9600}
       STRATUM_LISTEN: 0.0.0.0:3333
@@ -41,7 +34,7 @@ services:
       - "${STATS_BIND_HOST:-127.0.0.1}:${STATS_PORT_HOST:-9640}:9640"
     volumes:
       - gbsolo-data:/data
-    # Optional: limit the CPU cores the node may use.
+    # Optional: limit the CPU cores the node may use for its proofs.
     # cpus: "8"
 
 volumes:

@@ -117,14 +117,14 @@ Copyright (c) 2026 Bain Capital Crypto, LP and Ron Rothblum
 Modifications copyright 2026 Succinct Labs, Benedikt Bunz, William Wang
 
 ------------------------------------------------------------------------------
-B. Rust libraries compiled into the pool programs and the node (446 crates)
+B. Rust libraries compiled into the pool programs and the node (443 crates)
 ------------------------------------------------------------------------------
 
 Where a library offers a choice of licenses, it is used under the one shown.
 The source code of every library is available on crates.io under the name and
 version shown.
 
-Used by: blake3 1.8.5, blake3 1.8.7
+Used by: blake3 1.8.5
 License: Apache-2.0
 
                                  Apache License
@@ -331,7 +331,7 @@ License: Apache-2.0
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-Used by: blake3 1.8.5, blake3 1.8.7
+Used by: blake3 1.8.5
 License: Apache-2.0
 
                                  Apache License
@@ -555,7 +555,7 @@ Software.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-Used by: blake3 1.8.5, blake3 1.8.7, constant_time_eq 0.4.2
+Used by: blake3 1.8.5, constant_time_eq 0.4.2
 License: Apache-2.0
 
 Creative Commons Legal Code
@@ -2122,7 +2122,7 @@ SOFTWARE.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-Used by: arrayvec 0.7.6, arrayvec 0.7.8
+Used by: arrayvec 0.7.6
 License: MIT
 
 Copyright (c) Ulrik Sverdrup "bluss" 2015-2023
@@ -2911,37 +2911,6 @@ Used by: cpufeatures 0.2.17, cpufeatures 0.3.0
 License: MIT
 
 Copyright (c) 2020-2025 The RustCrypto Project Developers
-
-Permission is hereby granted, free of charge, to any
-person obtaining a copy of this software and associated
-documentation files (the "Software"), to deal in the
-Software without restriction, including without
-limitation the rights to use, copy, modify, merge,
-publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software
-is furnished to do so, subject to the following
-conditions:
-
-The above copyright notice and this permission notice
-shall be included in all copies or substantial portions
-of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
-ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
-TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
-SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
-IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-DEALINGS IN THE SOFTWARE.
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Used by: cpufeatures 0.3.1
-License: MIT
-
-Copyright (c) 2020-2026 The RustCrypto Project Developers
 
 Permission is hereby granted, free of charge, to any
 person obtaining a copy of this software and associated
